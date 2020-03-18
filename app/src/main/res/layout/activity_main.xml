@@ -8,8 +8,7 @@
 
     <EditText
         android:id="@+id/editTextPff"
-        android:hint="@string/pff_file"
-        android:text="/mnt/sdcard/csentry/Simple CAPI/Simple CAPI.pff"
+        android:text="@string/pff_file"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -19,24 +18,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinnerMode"
-        android:spinnerMode="dialog"
-        android:prompt="@string/mode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextPff"
-        android:entries="@array/array_open_modes"
-        />
-
     <EditText
-        android:id="@+id/editTextCaseId"
-        android:hint="@string/start_case"
+        android:id="@+id/editTextStaffName"
+        android:text="@string/staff_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -44,7 +28,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinnerMode" />
+        app:layout_constraintTop_toBottomOf="@id/editTextPff" />
 
     <Button
         android:id="@+id/buttonLaunch"
@@ -54,7 +38,7 @@
         android:text="@string/launch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextCaseId"
+        app:layout_constraintTop_toBottomOf="@id/editTextStaffName"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="160dp" />
 

@@ -1,0 +1,99 @@
+﻿[FormFile]
+Version=CSPro 7.3
+Name=CSENTRY_APPLICATION_FF
+Label=CSEntry Application
+DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
+FieldEntryFont=0018 0000 0000 0000 0600 0000 0000 0000 0000 0000 0000 0000 0000 Courier New
+Type=SystemControlled
+  
+[Dictionaries]
+File=.\CSEntry Application.dcf
+  
+[Form]
+Name=FORM000
+Label=CSEntry Application Level
+QuestionTextHeight=101
+Level=1
+Size=628,269
+  
+Item=ID
+Item=STAFF_NAME
+Item=NUMERIC_VALUE
+Item=STRING_VALUE
+  
+[EndForm]
+  
+[Level]
+Name=CSENTRY_APPLICATION_LEVEL
+Label=CSEntry Application Level
+  
+[Group]
+Required=Yes
+Name=CSENTRY_APPLICATION_LEVEL_FORM
+Label=CSEntry Application Level
+Form=1
+LogicControl=No
+Max=1
+  
+[Field]
+Name=ID
+Position=152,40,450,60
+Item=ID,CSENTRY_APPLICATION_DICT
+Protected=Yes
+FieldLabelType=DictionaryLabel
+UseUnicodeTextBox=Yes
+Form=1
+  
+[Text]
+Position=40,43,53,59
+Text=ID
+ 
+  
+[Field]
+Name=STAFF_NAME
+Position=152,91,562,111
+Item=STAFF_NAME,CSENTRY_APPLICATION_DICT
+Protected=Yes
+FieldLabelType=DictionaryLabel
+UseUnicodeTextBox=Yes
+Form=1
+  
+[Text]
+Position=40,94,110,110
+Text=Staff Name
+ 
+  
+  
+[Field]
+Name=NUMERIC_VALUE
+Position=152,173,293,193
+Item=NUMERIC_VALUE,CSENTRY_APPLICATION_DICT
+FieldLabelType=DictionaryLabel
+Form=1
+  
+[Text]
+Position=40,176,134,192
+Text=Numeric Value
+ 
+  
+[Field]
+Name=STRING_VALUE
+Position=152,225,562,245
+Item=STRING_VALUE,CSENTRY_APPLICATION_DICT
+FieldLabelType=DictionaryLabel
+UseUnicodeTextBox=Yes
+Form=1
+  
+[Text]
+Position=40,228,119,244
+Text=String Value
+ 
+[Block]
+Name=VALUES_BLOCK
+Label=Values Block
+DisplayTogether=Yes
+Position=2
+Length=2
+  
+[EndGroup]
+  

@@ -1,0 +1,49 @@
+﻿[Dictionary]
+Version=CSPro 7.3
+Label=CSEntry Application
+Name=CSENTRY_APPLICATION_DICT
+RecordTypeStart=1
+RecordTypeLen=1
+Positions=Relative
+ZeroFill=No
+DecimalChar=Yes
+AllowDataViewerModifications=Yes
+
+[Level]
+Label=CSEntry Application Level
+Name=CSENTRY_APPLICATION_LEVEL
+
+[IdItems]
+
+[Item]
+Label=ID
+Name=ID
+Start=2
+Len=36
+DataType=Alpha
+
+[Record]
+Label=CSEntry Application Record
+Name=CSENTRY_APPLICATION_REC
+RecordTypeValue='1'
+RecordLen=147
+
+[Item]
+Label=Staff Name
+Name=STAFF_NAME
+Start=38
+Len=50
+DataType=Alpha
+
+[Item]
+Label=Numeric Value
+Name=NUMERIC_VALUE
+Start=88
+Len=10
+
+[Item]
+Label=String Value
+Name=STRING_VALUE
+Start=98
+Len=50
+DataType=Alpha

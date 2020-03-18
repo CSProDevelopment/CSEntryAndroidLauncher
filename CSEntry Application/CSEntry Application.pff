@@ -1,0 +1,11 @@
+﻿[Run Information]
+Version=CSPro 7.3
+AppType=Entry
+
+[DataEntryInit]
+AutoAdd=No
+
+[Files]
+Application=.\CSEntry Application.ent
+InputData=.\CSEntry Application.csdb
+Paradata=.\CSEntry Application.cslog

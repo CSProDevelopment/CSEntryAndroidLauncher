@@ -1,0 +1,15 @@
+﻿PROC GLOBAL
+
+
+function string GetCaseInfo()
+
+	if find(CSENTRY_APPLICATION_DICT, =, ID) then
+		exit "Previously existing case with ID: " + ID;
+	else
+		exit "Brand new case with ID: " + ID;
+	endif;
+
+end;
+
+
+PROC CSENTRY_APPLICATION_FF

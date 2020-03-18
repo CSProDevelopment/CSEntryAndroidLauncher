@@ -3,21 +3,19 @@ package gov.census.cspro.csentrylauncher;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
+
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText mEditTextPffFile;
-    private EditText mEditTextCaseId;
-    private Spinner mSpinnerMode;
+    private EditText mEditTextStaffName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,49 +23,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mEditTextPffFile = findViewById(R.id.editTextPff);
-        mEditTextCaseId = findViewById(R.id.editTextCaseId);
-        mSpinnerMode = findViewById(R.id.spinnerMode);
-
-        // Only enable for modify mode
-        mEditTextCaseId.setEnabled(mSpinnerMode.getSelectedItemPosition() == 1);
-
-        mSpinnerMode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                // Only enable for modify mode
-                mEditTextCaseId.setEnabled(pos == 1);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
+        mEditTextStaffName = findViewById(R.id.editTextStaffName);
 
         Button buttonLaunch = findViewById(R.id.buttonLaunch);
         buttonLaunch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final String pffFile = mEditTextPffFile.getText().toString();
-                final boolean addMode = mSpinnerMode.getSelectedItemPosition() == 0;
-                final String startCaseId = addMode ? null : mEditTextCaseId.getText().toString();
-                launchCSEntry(pffFile, addMode, startCaseId);
+                final String staffName = mEditTextStaffName.getText().toString();
+                launchCSEntry(pffFile, staffName);
             }
         });
     }
 
-    private void launchCSEntry(String pffFile, boolean addMode, String startCaseId) {
+    private void launchCSEntry(String pffFile, String staffName) {
 
         try {
             Intent intent = new Intent();
             intent.setComponent(new ComponentName("gov.census.cspro.csentry", "gov.census.cspro.csentry.ui.EntryActivity"));
-            intent.putExtra("NEWCASE", addMode ? 0 : 1);
-            intent.putExtra("CASEID", startCaseId);
             intent.putExtra("PFF_FILENAME", pffFile);
-            intent.putExtra("OPERATOR_ID", "josh");
+            intent.putExtra("STAFF_NAME", staffName);
+            intent.putExtra("Key", UUID.randomUUID());
             startActivity(intent);
-        } catch (ActivityNotFoundException e)
-        {
+        }
+
+        catch (ActivityNotFoundException e) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
             alertDialogBuilder.setMessage(R.string.activity_not_found).show();
         }
