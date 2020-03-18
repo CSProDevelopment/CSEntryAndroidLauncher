@@ -13,3 +13,11 @@ end;
 
 
 PROC CSENTRY_APPLICATION_FF
+
+
+PROC CSENTRY_APPLICATION_LEVEL
+
+	SystemApp android_launcher_callback;
+	android_launcher_callback.setArgument("NUMERIC_VALUE", NUMERIC_VALUE);
+	android_launcher_callback.setArgument("STRING_VALUE", STRING_VALUE);
+	android_launcher_callback.exec("gov.census.cspro.csentrylauncher");
