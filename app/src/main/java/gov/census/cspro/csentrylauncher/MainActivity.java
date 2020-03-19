@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             Intent intent = new Intent();
             intent.setComponent(new ComponentName("gov.census.cspro.csentry", "gov.census.cspro.csentry.ui.EntryActivity"));
-            intent.putExtra("PFF_FILENAME", pffFile);
+            intent.putExtra("PffFilename", pffFile);
             intent.putExtra("STAFF_NAME", staffName);
             intent.putExtra("Key", UUID.randomUUID());
             startActivity(intent);
