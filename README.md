@@ -10,7 +10,7 @@ intent.setComponent(new ComponentName("gov.census.cspro.csentry", "gov.census.cs
 You must specify the name of the PFF file to launch as an extra in the Intent:
 
 ```
-intent.putExtra("PFF_FILENAME", "CSEntry Application.pff");
+intent.putExtra("PffFilename", "CSEntry Application.pff");
 ```
 
 If the PFF is a fully evaluated path, that file will be opened. If not, CSEntry will look for a file with that name in the *csentry* directory.

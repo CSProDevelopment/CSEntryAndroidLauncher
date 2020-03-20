@@ -7,7 +7,6 @@ RecordTypeLen=1
 Positions=Relative
 ZeroFill=No
 DecimalChar=Yes
-AllowDataViewerModifications=Yes
 
 [Level]
 Label=CSEntry Application Level

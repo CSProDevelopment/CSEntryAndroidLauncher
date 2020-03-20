@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CSEntry Launcher</string>
-    <string name="launch">Launch CSEntry</string>
+    <string name="launch">Add New Case</string>
     <string name="pff_file">CSEntry Application.pff</string>
     <string name="staff_name">&lt;staff name&gt;</string>
     <string name="activity_not_found">Failed to launch CSEntry. Make sure it is installed on this device.</string>
