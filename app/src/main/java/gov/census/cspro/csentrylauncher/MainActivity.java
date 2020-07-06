@@ -61,10 +61,13 @@ public class MainActivity extends AppCompatActivity {
         try {
             Intent intent = new Intent();
             intent.setComponent(new ComponentName("gov.census.cspro.csentry", "gov.census.cspro.csentry.ui.EntryActivity"));
-            intent.putExtra("NEWCASE", addMode ? 0 : 1);
-            intent.putExtra("CASEID", startCaseId);
-            intent.putExtra("PFF_FILENAME", pffFile);
-            intent.putExtra("OPERATOR_ID", "josh");
+            if (addMode) {
+                intent.putExtra("StartMode", "add");
+            } else {
+                intent.putExtra("Key", startCaseId);
+            }
+            intent.putExtra("PffFilename", pffFile);
+            intent.putExtra("OperatorID", "josh");
             startActivity(intent);
         } catch (ActivityNotFoundException e)
         {
