@@ -1,5 +1,5 @@
 ﻿[FormFile]
-Version=CSPro 7.3
+Version=CSPro 7.6
 Name=CSENTRY_APPLICATION_FF
 Label=CSEntry Application
 DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
@@ -12,7 +12,7 @@ File=.\CSEntry Application.dcf
 [Form]
 Name=FORM000
 Label=CSEntry Application Level
-QuestionTextHeight=101
+QuestionTextHeight=166
 Level=1
 Size=628,269
   
@@ -32,7 +32,6 @@ Required=Yes
 Name=CSENTRY_APPLICATION_LEVEL_FORM
 Label=CSEntry Application Level
 Form=1
-LogicControl=No
 Max=1
   
 [Field]

@@ -1,5 +1,5 @@
 ﻿[Dictionary]
-Version=CSPro 7.3
+Version=CSPro 7.6
 Label=CSEntry Application
 Name=CSENTRY_APPLICATION_DICT
 RecordTypeStart=1
@@ -7,6 +7,7 @@ RecordTypeLen=1
 Positions=Relative
 ZeroFill=No
 DecimalChar=Yes
+SecurityOptions=8230B7D0A4CDA28BF0351D42C87FC229F317774C903FE567991014B77299DCB9B10E6C8454334FECA5FCCE12459BCF17
 
 [Level]
 Label=CSEntry Application Level
