@@ -3,13 +3,13 @@ package gov.census.cspro.csentrylauncher
 import android.content.ActivityNotFoundException
 import android.content.ComponentName
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
@@ -25,11 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         mEditTextPffFile = findViewById(R.id.editTextPff)
         mEditTextStaffName = findViewById(R.id.editTextStaffName)
-        val buttonLaunch = findViewById<Button>(R.id.buttonLaunch)
-        buttonLaunch.setOnClickListener {
-            val pffFile = mEditTextPffFile.text.toString()
-            val staffName = mEditTextStaffName.text.toString()
-            launchCSEntry(pffFile, staffName)
+
+        findViewById<Button>(R.id.buttonLaunchViaIntent).setOnClickListener {
+            launchCSEntryViaIntent(mEditTextPffFile.text.toString(), mEditTextStaffName.text.toString())
+        }
+
+        findViewById<Button>(R.id.buttonLaunchViaDeepLink).setOnClickListener {
+            launchCSEntryViaDeepLink(mEditTextPffFile.text.toString(), mEditTextStaffName.text.toString())
         }
 
         // RecyclerView that displays list of cases from CSPro
@@ -38,13 +40,13 @@ class MainActivity : AppCompatActivity() {
         val adapter = CSProCaseListAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-        casesViewModel.allCases.observe(this, Observer { cases ->
+        casesViewModel.allCases.observe(this) { cases ->
             // Update the cached copy of the words in the adapter.
             cases?.let { adapter.setCases(it) }
-        })
+        }
     }
 
-    private fun launchCSEntry(pffFile: String, staffName: String) {
+    private fun launchCSEntryViaIntent(pffFile: String, staffName: String) {
         try {
             val intent = Intent()
             intent.component = ComponentName("gov.census.cspro.csentry", "gov.census.cspro.csentry.ui.EntryActivity")
@@ -56,5 +58,17 @@ class MainActivity : AppCompatActivity() {
             val alertDialogBuilder = AlertDialog.Builder(this)
             alertDialogBuilder.setMessage(R.string.activity_not_found).show()
         }
+    }
+
+    private fun launchCSEntryViaDeepLink(pffFile: String, staffName: String) {
+        val uri = Uri.parse("https://csprousers.org/pff")
+            .buildUpon()
+            .appendPath(pffFile)
+            .appendQueryParameter("STAFF_NAME", staffName)
+            .appendQueryParameter("Key", UUID.randomUUID().toString())
+            .build()
+
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        startActivity(intent)
     }
 }
