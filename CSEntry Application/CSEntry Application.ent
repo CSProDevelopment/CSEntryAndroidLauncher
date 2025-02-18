@@ -1,23 +1,77 @@
-﻿[CSPro Application]
-Version=CSPro 7.6
-Label=CSENTRY_APPLICATION
-Name=CSENTRY_APPLICATION
-AppType=DataEntry
-OperatorID=No
-CAPI=Yes
-CreateListing=No
-CreateLog=No
-ShowErrorMessageNumbers=No
-ComboBoxShowOnlyDiscreteValues=Yes
-ParadataCollection=AllEvents
-ParadataDeviceStateMinutes=5
-[AppCode]
-File=.\CSEntry Application.ent.apc
-[Message]
-File=.\CSEntry Application.ent.mgf
-[Help]
-File=.\CSEntry Application.ent.qsf
-[Forms]
-File=.\CSEntry Application.fmf
-[Dictionary Types]
-Dict-Type=.\CSEntry Application.dcf,Input,.\CSEntry Application.fmf
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "application", 
+  "type": "entry", 
+  "name": "CSENTRY_APPLICATION", 
+  "label": "CSENTRY_APPLICATION", 
+  "dictionaries": [
+    {
+      "type": "input", 
+      "path": "CSEntry Application.dcf", 
+      "parent": "CSEntry Application.fmf"
+    }
+  ], 
+  "forms": [
+    "CSEntry Application.fmf"
+  ], 
+  "questionText": [
+    "CSEntry Application.ent.qsf"
+  ], 
+  "code": [
+    {
+      "type": "main", 
+      "path": "CSEntry Application.ent.apc"
+    }
+  ], 
+  "messages": [
+    "CSEntry Application.ent.mgf"
+  ], 
+  "logicSettings": {
+    "version": 2.0, 
+    "caseSensitive": {
+      "symbols": false
+    }, 
+    "actionInvoker": {
+      "accessFromExternalCaller": "promptIfNoValidAccessToken", 
+      "convertResultsForLogic": true
+    }
+  }, 
+  "properties": {
+    "askOperatorId": false, 
+    "autoAdvanceOnSelection": false, 
+    "caseTree": "mobileOnly", 
+    "centerForms": false, 
+    "createListing": false, 
+    "createLog": false, 
+    "decimalMark": "dot", 
+    "displayCodesAlongsideLabels": false, 
+    "notes": {
+      "delete": "all", 
+      "edit": "all"
+    }, 
+    "partialSave": {
+      "operatorEnabled": false
+    }, 
+    "showEndCaseMessage": true, 
+    "showOnlyDiscreteValuesInComboBoxes": true, 
+    "showFieldLabels": true, 
+    "showErrorMessageNumbers": false, 
+    "showQuestionText": true, 
+    "showRefusals": true, 
+    "verify": {
+      "frequency": 1, 
+      "start": 1
+    }, 
+    "htmlDialogs": true, 
+    "paradata": {
+      "collection": "all", 
+      "recordCoordinates": false, 
+      "recordInitialPropertyValues": false, 
+      "recordIteratorLoadCases": false, 
+      "recordValues": false, 
+      "deviceStateIntervalMinutes": 5
+    }, 
+    "useHtmlComponentsInsteadOfNativeVersions": false
+  }
+}

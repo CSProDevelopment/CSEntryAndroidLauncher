@@ -33,7 +33,9 @@ class GetCSProResultActivity : AppCompatActivity() {
         val nv = intent.getDoubleExtra("NUMERIC_VALUE", 0.0)
 
         // Save in database
-        casesViewModel.insert(CSProCase(key, nv, sv))
+        if( key != null ) {
+            casesViewModel.insert(CSProCase(key, nv, sv.orEmpty()))
+        }
 
         // End activity to go back to CSPro
         finish()

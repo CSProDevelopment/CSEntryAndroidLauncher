@@ -1,5 +1,5 @@
 ﻿[FormFile]
-Version=CSPro 7.6
+Version=CSPro 8.0
 Name=CSENTRY_APPLICATION_FF
 Label=CSEntry Application
 DefaultTextFont=-013 0000 0000 0000 0700 0000 0000 0000 0000 0000 0000 0000 0000 Arial
@@ -41,6 +41,7 @@ Item=ID,CSENTRY_APPLICATION_DICT
 Protected=Yes
 FieldLabelType=DictionaryLabel
 UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -55,6 +56,7 @@ Item=STAFF_NAME,CSENTRY_APPLICATION_DICT
 Protected=Yes
 FieldLabelType=DictionaryLabel
 UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -68,6 +70,7 @@ Name=NUMERIC_VALUE
 Position=152,173,293,193
 Item=NUMERIC_VALUE,CSENTRY_APPLICATION_DICT
 FieldLabelType=DictionaryLabel
+DataCaptureType=TextBox
 Form=1
   
 [Text]
@@ -81,6 +84,7 @@ Position=152,225,562,245
 Item=STRING_VALUE,CSENTRY_APPLICATION_DICT
 FieldLabelType=DictionaryLabel
 UseUnicodeTextBox=Yes
+DataCaptureType=TextBox
 Form=1
   
 [Text]

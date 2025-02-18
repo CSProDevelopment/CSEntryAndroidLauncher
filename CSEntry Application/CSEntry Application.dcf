@@ -1,49 +1,72 @@
-﻿[Dictionary]
-Version=CSPro 7.6
-Label=CSEntry Application
-Name=CSENTRY_APPLICATION_DICT
-RecordTypeStart=1
-RecordTypeLen=1
-Positions=Relative
-ZeroFill=No
-DecimalChar=Yes
-SecurityOptions=8230B7D0A4CDA28BF0351D42C87FC229F317774C903FE567991014B77299DCB9B10E6C8454334FECA5FCCE12459BCF17
-
-[Level]
-Label=CSEntry Application Level
-Name=CSENTRY_APPLICATION_LEVEL
-
-[IdItems]
-
-[Item]
-Label=ID
-Name=ID
-Start=2
-Len=36
-DataType=Alpha
-
-[Record]
-Label=CSEntry Application Record
-Name=CSENTRY_APPLICATION_REC
-RecordTypeValue='1'
-RecordLen=147
-
-[Item]
-Label=Staff Name
-Name=STAFF_NAME
-Start=38
-Len=50
-DataType=Alpha
-
-[Item]
-Label=Numeric Value
-Name=NUMERIC_VALUE
-Start=88
-Len=10
-
-[Item]
-Label=String Value
-Name=STRING_VALUE
-Start=98
-Len=50
-DataType=Alpha
+{
+  "software": "CSPro", 
+  "version": 8.0, 
+  "fileType": "dictionary", 
+  "name": "CSENTRY_APPLICATION_DICT", 
+  "labels": [ { "text": "CSEntry Application" } ], 
+  "security": {
+    "allowDataViewerModifications": true, 
+    "allowExport": true, 
+    "cachedPasswordMinutes": 0, 
+    "settings": "8230b7d0a4cda28bf0351d42c87fc229f317774c903fe567991014b77299dcb9b10e6c8454334feca5fcce12459bcf17"
+  }, 
+  "readOptimization": true, 
+  "recordType": {
+    "start": 1, 
+    "length": 1
+  }, 
+  "defaults": {
+    "decimalMark": true, 
+    "zeroFill": false
+  }, 
+  "relativePositions": true, 
+  "levels": [
+    {
+      "name": "CSENTRY_APPLICATION_LEVEL", 
+      "labels": [ { "text": "CSEntry Application Level" } ], 
+      "ids": {
+        "items": [
+          {
+            "name": "ID", 
+            "labels": [ { "text": "ID" } ], 
+            "contentType": "alpha", 
+            "start": 2, 
+            "length": 36
+          }
+        ]
+      }, 
+      "records": [
+        {
+          "name": "CSENTRY_APPLICATION_REC", 
+          "labels": [ { "text": "CSEntry Application Record" } ], 
+          "recordType": "1", 
+          "occurrences": {
+            "required": true, 
+            "maximum": 1
+          }, 
+          "items": [
+            {
+              "name": "STAFF_NAME", 
+              "labels": [ { "text": "Staff Name" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }, 
+            {
+              "name": "NUMERIC_VALUE", 
+              "labels": [ { "text": "Numeric Value" } ], 
+              "contentType": "numeric", 
+              "length": 10, 
+              "zeroFill": false
+            }, 
+            {
+              "name": "STRING_VALUE", 
+              "labels": [ { "text": "String Value" } ], 
+              "contentType": "alpha", 
+              "length": 50
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
