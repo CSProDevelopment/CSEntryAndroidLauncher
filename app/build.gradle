@@ -1,19 +1,19 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'com.google.devtools.ksp' version '2.0.21-1.0.27'
+    id 'com.google.devtools.ksp' version '2.1.20-1.0.31'
 }
 
 android {
     namespace 'gov.census.cspro.csentrylauncher'
 
-    compileSdk 34
-    buildToolsVersion = '34.0.0'
+    compileSdk 36
+    buildToolsVersion = '36.0.0'
 
     defaultConfig {
         applicationId "gov.census.cspro.csentrylauncher"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 36
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -28,29 +28,30 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+    ndkVersion '28.2.13676358'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.2.10'
 
-    implementation "androidx.room:room-runtime:2.4.3"
-    implementation "androidx.room:room-ktx:2.4.3"
-    ksp "androidx.room:room-compiler:2.4.3"
-    androidTestImplementation "androidx.room:room-testing:2.4.3"
+    implementation "androidx.room:room-runtime:2.7.2"
+    implementation "androidx.room:room-ktx:2.7.2"
+    ksp "androidx.room:room-compiler:2.7.2"
+    androidTestImplementation "androidx.room:room-testing:2.7.2"
 
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0-alpha01"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.2"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation "androidx.activity:activity-ktx:1.1.0"
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.2"
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation "androidx.activity:activity-ktx:1.10.1"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2"
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
 }
