@@ -1,6 +1,6 @@
 ﻿---
 fileType: Question Text
-version: CSPro 7.6
+version: CSPro 8.1
 languages:
   - name: EN
     label: English
@@ -29,13 +29,18 @@ questions:
   - name: VALUES_BLOCK
     conditions:
       - questionText:
-          EN: |
-            <p><span style="font-size:16px;color:#000000;">~~GetCaseInfo()~~&nbsp;</span></p>
-            <p><span style="font-size:16px;color:#000000;">Staff Name: ~~STAFF_NAME~~&nbsp;</span></p>
-            <p>&nbsp;</p>
-            <p><span style="font-size:16px;color:#000000;">Enter some values, which will be passed back to CSEntryAndroidLauncher.</span></p>
-            
+          EN:
+            format: Markdown-Report
+            text: |
+              ~~GetCaseInfo()~~
+              
+              Staff Name: ~~STAFF_NAME~~
+              
+              <br>
+              Enter some values, which will be passed back to CSEntryAndroidLauncher.
         helpText:
-          EN: |
-            
+          EN:
+            format: Markdown-Report
+            text: |
+              
 ...

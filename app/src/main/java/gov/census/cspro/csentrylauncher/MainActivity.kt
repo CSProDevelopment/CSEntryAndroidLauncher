@@ -3,16 +3,18 @@ package gov.census.cspro.csentrylauncher
 import android.content.ActivityNotFoundException
 import android.content.ComponentName
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
+import java.util.UUID
+import androidx.core.net.toUri
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mEditTextPffFile: EditText
@@ -21,7 +23,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
+
+        // for edge-to-edge
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { view, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         mEditTextPffFile = findViewById(R.id.editTextPff)
         mEditTextStaffName = findViewById(R.id.editTextStaffName)
@@ -54,14 +64,14 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("STAFF_NAME", staffName)
             intent.putExtra("Key", UUID.randomUUID())
             startActivity(intent)
-        } catch (e: ActivityNotFoundException) {
+        } catch (_: ActivityNotFoundException) {
             val alertDialogBuilder = AlertDialog.Builder(this)
             alertDialogBuilder.setMessage(R.string.activity_not_found).show()
         }
     }
 
     private fun launchCSEntryViaDeepLink(pffFile: String, staffName: String) {
-        val uri = Uri.parse("https://csprousers.org/pff")
+        val uri = "https://csprousers.org/pff".toUri()
             .buildUpon()
             .appendPath(pffFile)
             .appendQueryParameter("STAFF_NAME", staffName)

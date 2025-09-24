@@ -1,67 +1,67 @@
 {
-  "software": "CSPro", 
-  "version": 8.0, 
-  "fileType": "dictionary", 
-  "name": "CSENTRY_APPLICATION_DICT", 
-  "labels": [ { "text": "CSEntry Application" } ], 
+  "software": "CSPro",
+  "version": 8.1,
+  "fileType": "dictionary",
+  "name": "CSENTRY_APPLICATION_DICT",
+  "labels": [ { "text": "CSEntry Application" } ],
   "security": {
-    "allowDataViewerModifications": true, 
-    "allowExport": true, 
-    "cachedPasswordMinutes": 0, 
+    "allowDataManagerModifications": true,
+    "allowExport": true,
+    "cachedPasswordMinutes": 0,
     "settings": "8230b7d0a4cda28bf0351d42c87fc229f317774c903fe567991014b77299dcb9b10e6c8454334feca5fcce12459bcf17"
-  }, 
-  "readOptimization": true, 
+  },
+  "readOptimization": true,
   "recordType": {
-    "start": 1, 
+    "start": 1,
     "length": 1
-  }, 
+  },
   "defaults": {
-    "decimalMark": true, 
+    "decimalMark": true,
     "zeroFill": false
-  }, 
-  "relativePositions": true, 
+  },
+  "relativePositions": true,
   "levels": [
     {
-      "name": "CSENTRY_APPLICATION_LEVEL", 
-      "labels": [ { "text": "CSEntry Application Level" } ], 
+      "name": "CSENTRY_APPLICATION_LEVEL",
+      "labels": [ { "text": "CSEntry Application Level" } ],
       "ids": {
         "items": [
           {
-            "name": "ID", 
-            "labels": [ { "text": "ID" } ], 
-            "contentType": "alpha", 
-            "start": 2, 
+            "name": "ID",
+            "labels": [ { "text": "ID" } ],
+            "contentType": "alpha",
+            "start": 2,
             "length": 36
           }
         ]
-      }, 
+      },
       "records": [
         {
-          "name": "CSENTRY_APPLICATION_REC", 
-          "labels": [ { "text": "CSEntry Application Record" } ], 
-          "recordType": "1", 
+          "name": "CSENTRY_APPLICATION_REC",
+          "labels": [ { "text": "CSEntry Application Record" } ],
+          "recordType": "1",
           "occurrences": {
-            "required": true, 
+            "required": true,
             "maximum": 1
-          }, 
+          },
           "items": [
             {
-              "name": "STAFF_NAME", 
-              "labels": [ { "text": "Staff Name" } ], 
-              "contentType": "alpha", 
+              "name": "STAFF_NAME",
+              "labels": [ { "text": "Staff Name" } ],
+              "contentType": "alpha",
               "length": 50
-            }, 
+            },
             {
-              "name": "NUMERIC_VALUE", 
-              "labels": [ { "text": "Numeric Value" } ], 
-              "contentType": "numeric", 
-              "length": 10, 
+              "name": "NUMERIC_VALUE",
+              "labels": [ { "text": "Numeric Value" } ],
+              "contentType": "numeric",
+              "length": 10,
               "zeroFill": false
-            }, 
+            },
             {
-              "name": "STRING_VALUE", 
-              "labels": [ { "text": "String Value" } ], 
-              "contentType": "alpha", 
+              "name": "STRING_VALUE",
+              "labels": [ { "text": "String Value" } ],
+              "contentType": "alpha",
               "length": 50
             }
           ]
